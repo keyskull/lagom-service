@@ -1,0 +1,11 @@
+language: scala
+scala:
+   - 2.11.8
+
+script: sbt clean coverage test coverageReport coverageAggregate codacyCoverage compile
+
+deploy:
+  provider: opsworks
+  access-key-id: ACCESS-KEY-ID
+  secret-access-key: SECRET-ACCESS-KEY
+  app-id: APP-ID
