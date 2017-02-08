@@ -32,7 +32,8 @@ lagomKafkaPropertiesFile in ThisBuild := Some(file(".") / "Kafka" / "server.prop
 lazy val commonSettings = Seq(
   version := "1.0-SNAPSHOT",
   javacOptions ++= Seq("-encoding", "UTF-8"),
-  libraryDependencies ++= Seq(
+  coverageEnabled := true,
+    libraryDependencies ++= Seq(
     lagomScaladslApi,
     lagomScaladslTestKit,
     "com.softwaremill.macwire" %% "macros" % "2.2.5" % "provided",
