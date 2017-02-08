@@ -1,10 +1,11 @@
-import com.typesafe.sbt.packager.MappingsHelper.directory
-import sbt.Keys.{baseDirectory, scalaVersion, unmanagedResourceDirectories}
+import sbt.Keys.scalaVersion
 
 import scala.concurrent.duration._
 // Mind that the import is needed.
 
 name := "lagom-service"
+javacOptions ++= Seq("-encoding", "UTF-8")
+coverageEnabled := true
 organization in ThisBuild := "me.keyskull"
 scalaVersion in ThisBuild := "2.11.8"
 
