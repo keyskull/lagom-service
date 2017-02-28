@@ -47,21 +47,21 @@ lazy val commonSettings = Seq(
     lagomScaladslApi,
     lagomScaladslServer % Optional,
     lagomScaladslTestKit,
-    Cinnamon.library.cinnamonCHMetrics,
-    Cinnamon.library.cinnamonCHMetricsStatsDReporter,
+//    Cinnamon.library.cinnamonCHMetrics,
+//    Cinnamon.library.cinnamonCHMetricsStatsDReporter,
 //    Cinnamon.library.cinnamonSandbox,
     macwire,scalaTest
   )
 )
 
 lazy val `Cinnamon-Agent` = (project in file("Cinnamon-Agent")).
-  enablePlugins(Cinnamon).
+//  enablePlugins(Cinnamon).
   settings(commonSettings: _*).settings(
-  cinnamon in run := true,
-  cinnamon in test := true,
-  cinnamonLogLevel := "INFO",
+//  cinnamon in run := true,
+//  cinnamon in test := true,
+//  cinnamonLogLevel := "INFO",
   libraryDependencies ++= Seq(
-    Cinnamon.library.cinnamonAkka,
+//    Cinnamon.library.cinnamonAkka,
     "com.typesafe.conductr" %% "scala-conductr-lib-common" % "1.6.1",
     "com.typesafe.akka" %% "akka-actor" % "2.4.6"
   )
@@ -89,13 +89,13 @@ lazy val `android-auth-impl` = (project in file("android-auth-impl")).
   dependsOn(`auth-api`)
 
 lazy val `user-impl` = (project in file("user-impl")).
-  enablePlugins(LagomScala, Cinnamon).
+  enablePlugins(LagomScala).
   settings(commonSettings: _*).
   settings(
     libraryDependencies ++= Seq(cache, ws,
       lagomScaladslCluster,
       lagomScaladslPersistenceCassandra,//Cassandra
-      Cinnamon.library.cinnamonLagom,
+//      Cinnamon.library.cinnamonLagom,
      "com.auth0" % "java-jwt" % "3.1.0",
       "com.google.firebase" % "firebase-server-sdk" % "3.0.3",
       "org.scalameta" %% "scalameta" % "1.4.0"

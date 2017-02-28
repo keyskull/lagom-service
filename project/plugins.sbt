@@ -7,5 +7,5 @@ resolvers += Resolver.url("scoverage-bintray", url("https://dl.bintray.com/sksam
 addSbtPlugin("me.lessis" % "bintray-sbt" % "0.3.0")
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.0")
 addSbtPlugin("com.codacy" % "sbt-codacy-coverage" % "1.3.8")
-addSbtPlugin("com.lightbend.cinnamon" % "sbt-cinnamon" % "2.2.2")
+//addSbtPlugin("com.lightbend.cinnamon" % "sbt-cinnamon" % "2.2.2")
 //addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.2.0-M8")
