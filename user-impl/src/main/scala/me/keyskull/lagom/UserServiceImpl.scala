@@ -1,9 +1,12 @@
 package me.keyskull.lagom
 
+import java.util.UUID
+
+import akka.NotUsed
 import com.google.inject.Inject
 import com.lightbend.lagom.scaladsl.api.ServiceCall
 import com.lightbend.lagom.scaladsl.persistence.PersistentEntityRegistry
-import me.keyskull.user.{AuthDone, AuthService, TokenAuth, UserService}
+import me.keyskull.user.{CreateUser, TokenAuth, User, UserService}
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -24,5 +27,13 @@ class UserServiceImpl(
     persistentEntities.refFor[UserEntity](userId)
         .ask(TokenAuth("")).map(f=>f.token)
 
+  }
+
+  override def getUser(userId: UUID): ServiceCall[NotUsed, User] = ServiceCall { userId =>
+    null
+  }
+
+  override def createUser: ServiceCall[CreateUser, NotUsed] = ServiceCall { userId =>
+    null
   }
 }

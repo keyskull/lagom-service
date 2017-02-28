@@ -13,7 +13,7 @@ import play.api.libs.json.{Format, Json}
 trait UserService extends Service {
   def checkUser: ServiceCall[String, String]
 
-  def createUser: ServiceCall[CreateUser, User]
+  def createUser: ServiceCall[CreateUser, NotUsed]
 
   def getUser(userId: UUID): ServiceCall[NotUsed, User]
 
